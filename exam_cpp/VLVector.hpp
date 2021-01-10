@@ -97,19 +97,10 @@ public:
 	VLVector &operator=(const VLVector &other)
 	{
 		if (this == &other) { return *this; }
+		if (_heapArray != nullptr) { delete[] _heapArray; }
 		_size = other._size, _capacity = other._capacity;
 		
-		// TODO: check
-		// maybe this is a code duplication????
-		FOR_I(StaticCapacity) { _staticArray[i] = other._staticArray[i]; }
-		
-		if (_heapArray != nullptr) { delete[] _heapArray; }
-		
-		_heapArray = new Type[_capacity]();
-		for (size_t i = 0; i < _size - 1; i++)
-		{
-			_heapArray[i] = other._heapArray[i];
-		}
+		insert(begin(), other.begin(), other.end())
 		return *this;
 	}
 
