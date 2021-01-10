@@ -16,7 +16,6 @@
 
 // for loops defiens
 #define FOR_I_RNG(start, end) for(size_t i=start; i<end; ++i)
-#define FOR_J_RNG(start, end) for(size_t j=start; j<end; ++j)
 #define FOR_I(end) for(size_t i=0; i<end; ++i)
 #define FOR_J(end) for(size_t j=0; j<end; ++j)
 
